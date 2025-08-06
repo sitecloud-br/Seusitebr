@@ -1,15 +1,510 @@
-<!-- Vamos considerar que todo o HTML original está aqui até a seção de depoimentos -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Site BR - Sua presença online começa aqui</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4ade80',
+                        secondary: '#22c55e',
+                        dark: '#166534'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #000;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(22, 101, 52, 0.2) 100%);
+        }
+        
+        .plan-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: scale(1.03);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #4ade80, #22c55e, #16a34a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .feature-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .feature-icon:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-black text-gray-800">
+    <!-- Header -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://i.postimg.cc/65dBDY3x/Captura-de-tela-2025-08-05-144737-removebg-preview.png" alt="Seu Site BR Logo" class="h-10 mr-3">
+                <h1 class="text-2xl font-bold gradient-text">Seu Site BR</h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="font-medium hover:text-primary transition">Início</a>
+                <a href="#services" class="font-medium hover:text-primary transition">Serviços</a>
+                <a href="#testimonials" class="font-medium hover:text-primary transition">Depoimentos</a>
+                <a href="#plans" class="font-medium hover:text-primary transition">Planos</a>
+                <a href="#contact" class="font-medium hover:text-primary transition">Contato</a>
+            </nav>
+            <button class="md:hidden text-gray-600">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </header>
 
-<!-- Testimonials Section -->
-<section id="testimonials" class="py-20 bg-gray-50">
-    <!-- ... conteúdo dos depoimentos ... -->
-</section>
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-32 pb-20 overflow-hidden">
+        <!-- Background Video -->
+        <div class="absolute inset-0 z-0">
+            <video autoplay muted loop class="w-full h-full object-cover">
+                <source src="https://youtu.be/UBXICVf3_nA" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="absolute inset-0 bg-black opacity-50"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center relative z-10">
+            <div class="md:w-1/2 mb-12 md:mb-0">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white">
+                    <span class="gradient-text">Sua presença online</span> <br>começa aqui
+                </h1>
+                <p class="text-xl text-gray-200 mb-8">
+                    Criamos websites profissionais que elevam sua marca e atraem mais clientes. 
+                    Soluções digitais sob medida para o seu negócio crescer na internet.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#plans" class="bg-primary hover:bg-secondary text-white font-bold py-4 px-8 rounded-full text-center shadow-lg hover:shadow-xl transition duration-300">
+                        Ver Planos
+                    </a>
+                    <a href="https://wa.me/+5599982418840" target="_blank" class="border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold py-4 px-8 rounded-full text-center transition duration-300">
+                        <i class="fab fa-whatsapp mr-2"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative">
+                    <div class="floating">
+                        <video autoplay muted loop class="rounded-2xl shadow-2xl w-full max-w-lg">
+                            <source src="https://youtu.be/UBXICVf3_nA" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-primary text-2xl mr-3"></i>
+                            <div>
+                                <p class="font-bold">+200</p>
+                                <p class="text-sm text-gray-600">Sites Criados</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -top-6 -right-6 bg-white p-4 rounded-xl shadow-lg">
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-yellow-400 text-2xl mr-3"></i>
+                            <div>
+                                <p class="font-bold">4.9/5</p>
+                                <p class="text-sm text-gray-600">Avaliação</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- AQUI FOI REMOVIDA A SEÇÃO DE VÍDEO COM O TÍTULO "Veja como criamos experiências digitais" -->
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Por que escolher a <span class="gradient-text">Seu Site BR</span>?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Oferecemos soluções web de alta qualidade com foco em resultados para o seu negócio
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-gray-50 p-8 rounded-2xl text-center hover:shadow-xl transition duration-300">
+                    <div class="feature-icon bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-rocket text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Entrega Rápida</h3>
+                    <p class="text-gray-600">
+                        Sites entregues em até 7 dias úteis, sem comprometer a qualidade do projeto
+                    </p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-2xl text-center hover:shadow-xl transition duration-300">
+                    <div class="feature-icon bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-mobile-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Design Responsivo</h3>
+                    <p class="text-gray-600">
+                        Sites otimizados para todos os dispositivos, garantindo a melhor experiência
+                    </p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-2xl text-center hover:shadow-xl transition duration-300">
+                    <div class="feature-icon bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-search text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">SEO Otimizado</h3>
+                    <p class="text-gray-600">
+                        Estruturas otimizadas para mecanismos de busca, aumentando sua visibilidade
+                    </p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-2xl text-center hover:shadow-xl transition duration-300">
+                    <div class="feature-icon bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-headset text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Suporte Vitalício</h3>
+                    <p class="text-gray-600">
+                        Assistência contínua para manter seu site sempre atualizado e funcionando
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- Plans Section -->
-<section id="plans" class="py-20 bg-gray-50">
-    <!-- ... conteúdo dos planos ... -->
-</section>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">O que nossos clientes dizem</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Histórias reais de empreendedores que transformaram seus negócios com nossos websites
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="testimonial-card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold mr-4">
+                            M
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Mariana Silva</h4>
+                            <p class="text-gray-600 text-sm">Dona de Boutique</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6">
+                        "Antes tinha dificuldade em mostrar minhas roupas online. Com o site da Seu Site BR, minhas vendas aumentaram 60% em 2 meses. O design é lindo e a navegação é intuitiva!"
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold mr-4">
+                            R
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Roberto Almeida</h4>
+                            <p class="text-gray-600 text-sm">Consultor Financeiro</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6">
+                        "Profissionalismo total! Meu site ficou exatamente como eu imaginava. O suporte é excelente e resolveram todas as minhas dúvidas rapidamente. Recomendo fortemente!"
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold mr-4">
+                            C
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Carlos Mendes</h4>
+                            <p class="text-gray-600 text-sm">Restaurante Familiar</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6">
+                        "Desde que lançamos nosso site, tivemos um aumento significativo de clientes. A equipe entendeu perfeitamente nossa necessidade e criou algo além das nossas expectativas."
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- Restante do HTML como Contato, Footer e Scripts continua intacto -->
+    <!-- Plans Section -->
+    <section id="plans" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Escolha o plano perfeito para você</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Planos flexíveis para atender todas as necessidades do seu negócio
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Basic Plan -->
+                <div class="plan-card bg-white rounded-2xl shadow-lg overflow-hidden transition duration-300">
+                    <div class="bg-primary py-6 text-center">
+                        <h3 class="text-2xl font-bold text-white">Básico</h3>
+                    </div>
+                    <div class="p-8">
+                        <div class="text-center mb-8">
+                            <p class="text-4xl font-bold">R$60</p>
+                            <p class="text-gray-600">Pagamento único</p>
+                        </div>
+                        <ul class="mb-8 space-y-4">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-primary mr-3"></i>
+                                <span>1 website</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-primary mr-3"></i>
+                                <span>Suporte vitalício</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-times-circle text-gray-400 mr-3"></i>
+                                <span class="text-gray-400">Sem atualizações</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-primary mr-3"></i>
+                                <span>Design básico</span>
+                            </li>
+                        </ul>
+                        <a href="https://wa.me/+5599982418840" target="_blank" class="block w-full bg-primary hover:bg-secondary text-white font-bold py-3 px-6 rounded-lg text-center transition duration-300">
+                            Escolher Plano
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Standard Plan -->
+                <div class="plan-card bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-primary transform md:scale-105 transition duration-300">
+                    <div class="bg-secondary py-6 text-center">
+                        <h3 class="text-2xl font-bold text-white">Padrão</h3>
+                        <span class="bg-white text-secondary text-xs font-bold px-3 py-1 rounded-full mt-2 inline-block">MAIS POPULAR</span>
+                    </div>
+                    <div class="p-8">
+                        <div class="text-center mb-8">
+                            <p class="text-4xl font-bold">R$139,90</p>
+                            <p class="text-gray-600">6 parcelas mensais</p>
+                        </div>
+                        <ul class="mb-8 space-y-4">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-primary mr-3"></i>
+                                <span>2 websites</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-primary mr-3"></i>
+                                <span>4 atualizações</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-primary mr-3"></i>
+                                <span>Suporte vitalício</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-primary mr-3"></i>
+                                <span>Design padrão</span>
+                            </li>
+                        </ul>
+                        <a href="https://wa.me/+5599982418840" target="_blank" class="block w-full bg-secondary hover:bg-dark text-white font-bold py-3 px-6 rounded-lg text-center transition duration-300">
+                            Escolher Plano
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Premium Plan -->
+                <div class="plan-card bg-white rounded-2xl shadow-lg overflow-hidden transition duration-300">
+                    <div class="bg-dark py-6 text-center">
+                        <h3 class="text-2xl font-bold text-white">Premium</h3>
+                    </div>
+                    <div class="p-8">
+                        <div class="text-center mb-8">
+                            <p class="text-4xl font-bold">R$209,90</p>
+                            <p class="text-gray-600">12 parcelas mensais</p>
+                        </div>
+                        <ul class="mb-8 space-y-4">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-primary mr-3"></i>
+                                <span>20 websites</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-primary mr-3"></i>
+                                <span>Atualizações ilimitadas</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-primary mr-3"></i>
+                                <span>Suporte vitalício</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-primary mr-3"></i>
+                                <span>Design premium</span>
+                            </li>
+                        </ul>
+                        <a href="https://wa.me/+5599982418840" target="_blank" class="block w-full bg-dark hover:bg-black text-white font-bold py-3 px-6 rounded-lg text-center transition duration-300">
+                            Escolher Plano
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gradient-to-r from-primary to-secondary rounded-3xl p-10 text-white text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Pronto para ter sua presença online?</h2>
+                    <p class="text-xl mb-8 max-w-2xl mx-auto">
+                        Entre em contato agora mesmo e descubra como podemos transformar sua ideia em um website incrível
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                        <a href="https://wa.me/+5599982418840" target="_blank" class="bg-white text-primary hover:bg-gray-100 font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl transition duration-300 flex items-center justify-center">
+                            <i class="fab fa-whatsapp text-2xl mr-3"></i> WhatsApp Direto
+                        </a>
+                        <div class="bg-white bg-opacity-20 py-4 px-6 rounded-full">
+                            <p class="font-bold"><i class="fas fa-map-marker-alt mr-2"></i> Região de Atendimento: Brasil</p>
+                        </div>
+                    </div>
+                    <div class="mt-8 bg-white bg-opacity-20 py-4 px-6 rounded-full inline-block">
+                        <p class="font-bold"><i class="far fa-clock mr-2"></i> Horário de Atendimento:</p>
+                        <p>Segunda a Sexta: 08h às 00h | Sábado: 08h às 18h</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center">
+                        <img src="https://i.postimg.cc/65dBDY3x/Captura-de-tela-2025-08-05-144737-removebg-preview.png" alt="Seu Site BR Logo" class="h-10 mr-3">
+                        <h2 class="text-2xl font-bold gradient-text">Seu Site BR</h2>
+                    </div>
+                    <p class="mt-2 text-gray-400">Sua presença online começa aqui</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://wa.me/+5599982418840" target="_blank" class="text-gray-400 hover:text-primary text-2xl">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-primary text-2xl">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-primary text-2xl">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
+                <p>&copy; 2023 Seu Site BR. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/+5599982418840" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300 z-50">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animation on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in-up');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.plan-card, .testimonial-card, .feature-icon').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add animation classes
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes fade-in-up {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            .animate-fade-in-up {
+                animation: fade-in-up 0.6s ease-out forwards;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
